@@ -1,11 +1,19 @@
 <?php
-include '../../db/db_conn.php';
-$id = $_GET["id"];
-$sql = "DELETE FROM `menus` WHERE ID = $id";
-$result = mysqli_query($conn, $sql);
+include __DIR__ . '/../../db/db_conn.php';
+include __DIR__ . '/../../db/db_menus.php';
 
-if ($result) {
-    header("Location: index.php?msg=Menu deleted successfully");
-} else {
-    echo "Failed: " . mysqli_error($conn);
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+
+if ($id <= 0) {
+    header('Location: index.php?msg=Invalid+menu+ID');
+    exit;
 }
+
+$ok = softDeleteMenu($conn, $id);
+
+if ($ok) {
+    header('Location: index.php?msg=Menu+deleted+successfully');
+} else {
+    header('Location: index.php?msg=Failed+to+delete+menu');
+}
+exit;
