@@ -1,1 +1,5 @@
 .env
+
+# Ignore user-uploaded images but keep the folder placeholder
+uploads/*
+!uploads/.gitkeep
