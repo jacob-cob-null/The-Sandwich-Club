@@ -1,10 +1,6 @@
 <?php
 /**
- * Data-access functions for the menuproducts table.
- */
-
-/**
- * Return all menu products joined with menu and product names, newest first.
+ * Return all DB actions for menuproducts table
  */
 function getMenuProducts($conn)
 {

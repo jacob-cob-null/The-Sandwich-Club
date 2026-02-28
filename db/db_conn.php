@@ -1,5 +1,6 @@
 <?php
 // Connection settings are read from Docker environment variables.
+
 // Fallback values mirror the .env.example defaults for convenience.
 $servername = getenv('DB_HOST')     ?: 'db';
 $username   = getenv('DB_USER')     ?: 'root';

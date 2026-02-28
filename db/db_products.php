@@ -1,11 +1,6 @@
 <?php
 /**
- * Data-access functions for the products table.
- * Products use hard delete (no DateDeleted column).
- */
-
-/**
- * Return all products, newest first.
+ * Return all DB actions for products table
  */
 function getProducts($conn)
 {
